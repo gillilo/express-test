@@ -40,6 +40,10 @@ export const swaggerDocs = {
 // 3) 스웨거에 등록하는 방법
 export const options = {
   swaggerOptions: {
+    requestInterceptor: function(request){
+        request.headers.Origin = `http://ec2-3-34-255-244.ap-northeast-2.compute.amazonaws.com:8000`;
+        return request;
+    },
     url: "/swagger.json",
   },
 }
